@@ -3,8 +3,9 @@ import java.util.Stack;
 public class EvaluatePostfix {
 
     public static void main(String[] args) {
-        String postfix = "23*5+";
-        int result = evaluatePostfix(postfix);
+        String postfix = "5 6 48 * +";
+        String noSpace = postfix.replaceAll(" ","");
+        int result = evaluatePostfix(noSpace);
         System.out.println("Postfix expression: " + postfix);
         System.out.println("Result: " + result);
     }
@@ -32,7 +33,6 @@ public class EvaluatePostfix {
                         break;
                     case '/':
                         if (operand2 == 0) {
-                            System.out.println("Exception cannot be divided by zero.");
                         }
                         stack.push(operand1 / operand2);
                         break;

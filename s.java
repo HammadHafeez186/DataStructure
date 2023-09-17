@@ -1,4 +1,4 @@
-public class Stack {
+public class s {
     public static int max_size = 100;
     public int top = -1;
     public int[] array = new int[max_size];
