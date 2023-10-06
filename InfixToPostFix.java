@@ -3,7 +3,7 @@ import java.util.Stack;
 public class InfixToPostFix {
     public static void main(String[] args) {
         Stack<Character> s = new Stack<>();
-        String infix = "(a*(b+c))";
+        String infix = "((a+b)*c-(d-e))/f+q";
         StringBuilder postfix = new StringBuilder();
 
         for (int i = 0; i < infix.length(); i++) {
@@ -18,7 +18,7 @@ public class InfixToPostFix {
                 while (!s.isEmpty() && s.peek() != '(') {
                     postfix.append(s.pop());
                 }
-                s.pop();
+                s.pop(); // remove '('
             }
             else {
                 while (!s.isEmpty() && precedence(ch) <= precedence(s.peek())) {
